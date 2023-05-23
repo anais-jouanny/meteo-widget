@@ -1,5 +1,4 @@
 import homeStyles from "../../modules/Home.module.css";
-import sun from "../../public/sunny.png";
 import Image from "next/image";
 import { CurrentResponse } from "openweathermap-ts/dist/types";
 

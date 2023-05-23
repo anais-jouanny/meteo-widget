@@ -6,6 +6,9 @@ import { AppContext } from "../context/context.js";
 import { CurrentResponse } from "openweathermap-ts/dist/types";
 
 const Home = () => {
+  // API Key
+  const apiKey = process.env.NEXT_PUBLIC_APIKEY;
+
   // Context : cities coord
   const { state, setState } = useContext(AppContext);
   const { cities, citiesCoord } = state;
@@ -18,7 +21,7 @@ const Home = () => {
     for (const city of cities) {
       axios
         .get(
-          `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=6eaf17dc01ff87f43eb33d4793e89cea`
+          `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`
         )
         .then((response) => {
           setState({
@@ -34,7 +37,7 @@ const Home = () => {
     for (const city of citiesCoord) {
       axios
         .get(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&appid=6eaf17dc01ff87f43eb33d4793e89cea&units=metric&lang=fr`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${city.lat}&lon=${city.lon}&appid=${apiKey}&units=metric&lang=fr`
         )
         .then((response) => {
           const newCity = { ...response.data, name: city.name };
