@@ -4,7 +4,7 @@ export const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const initialState = {
-    cities: ["paris"],
+    cities: ["paris", "toulouse"],
     citiesCoord: [],
   };
   const [state, setState] = useState(initialState);

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import { SetStateAction, useContext, useEffect, useState } from "react";
 import Card from "../components/Home/Card";
 import homeStyles from "../modules/Home.module.css";
 import { AppContext } from "../context/context.js";
@@ -18,22 +18,30 @@ const Home = () => {
 
   // Get the coordinates for each city
   useEffect(() => {
+    let array: any[] = [];
+
     for (const city of cities) {
       axios
         .get(
           `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`
         )
         .then((response) => {
+          array.push(response.data[0]);
+
           setState({
             ...state,
-            citiesCoord: response.data,
+            citiesCoord: array,
           });
         });
     }
   }, []);
 
+  console.log(citiesWeather);
+
   // Get the weather for each city
   useEffect(() => {
+    let arrayBis: any[] = [];
+
     for (const city of citiesCoord) {
       axios
         .get(
@@ -41,13 +49,11 @@ const Home = () => {
         )
         .then((response) => {
           const newCity = { ...response.data, name: city.name };
-          setCitiesWeather([...citiesWeather, newCity]);
+          arrayBis.push(newCity);
+          setCitiesWeather(arrayBis);
         });
     }
   }, [citiesCoord]);
-
-  console.log(citiesCoord);
-  console.log(citiesWeather);
 
   return (
     <div className={homeStyles.container}>
