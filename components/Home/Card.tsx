@@ -2,13 +2,22 @@ import homeStyles from "../../modules/Home.module.css";
 import Image from "next/image";
 import { CurrentResponse } from "openweathermap-ts/dist/types";
 
-const Card = ({ cityWeather }: CurrentResponse) => {
-  const { name, main, weather } = cityWeather;
+type CardProps = {
+  cityWeather: CurrentResponse;
+};
+
+const Card = ({ cityWeather }: CardProps) => {
+  const { name, country, main, weather } = cityWeather;
+
   return (
     <div className={homeStyles.card}>
-      <h2 className={homeStyles.city}>{name}</h2>
+      <div className={homeStyles.cardTitle}>
+        <h2 className={homeStyles.city}>{name}</h2>
+        <h3 className={homeStyles.cityCountry}>{country}</h3>
+      </div>
+
       <p className={homeStyles.p}>
-        température : <span>{main.temp_min}</span>
+        température : <span>{parseInt(main.temp_min)}°</span>
       </p>
       <p className={homeStyles.p}>{weather[0].description}</p>
       <Image
