@@ -9,7 +9,7 @@ const Home = () => {
   // API Key
   const apiKey = process.env.NEXT_PUBLIC_APIKEY;
 
-  // Context : cities coord
+  // Context : cities name
   const { state, setState } = useContext(AppContext);
   const { cities, citiesCoord } = state;
 

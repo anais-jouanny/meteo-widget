@@ -1,3 +1,69 @@
 .container {
-  color: brown;
+  text-align: center;
+}
+
+.card {
+  padding: 0.7em;
+  margin: 0 auto 1.2em;
+  background-color: rgb(2, 178, 237);
+  border-radius: 1em;
+  width: 75%;
+  list-style: none;
+}
+
+.openCard {
+  padding: 0.7em;
+  margin: 0 auto 1.2em;
+  background-color: white;
+  border: 0.15em solid rgb(2, 178, 237);
+  border-radius: 1em;
+  width: 75%;
+  list-style: none;
+}
+
+.cardTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2em;
+  flex-wrap: wrap;
+}
+
+.cardTitle:hover {
+  cursor: pointer;
+}
+
+.city {
+  text-transform: uppercase;
+  font-size: medium;
+}
+
+.cityCountry {
+  font-size: small;
+}
+
+.datasRow {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-top: 1.2em;
+}
+
+.icon {
+  width: 2.2em;
+  height: auto;
+}
+
+@media (min-width: 680px) {
+  .card,
+  .openCard {
+    width: 40%;
+  }
+
+  .datasRow {
+    justify-content: center;
+  }
 }
