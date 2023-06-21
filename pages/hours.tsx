@@ -10,8 +10,7 @@ const ByHours = () => {
   const apiKey = process.env.NEXT_PUBLIC_APIKEY;
 
   // Context : cities name
-  const { state, setState } = useContext(AppContext);
-  const { cities } = state;
+  const { cities } = useContext(AppContext);
 
   // Local state : wather of 24 next hours (by hour), for each city
   const [citiesWeather, setCitiesWeather] = useState<ThreeHourResponse[]>([]);

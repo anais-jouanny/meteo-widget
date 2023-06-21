@@ -15,6 +15,10 @@ const Navbar = () => {
       <li>
         <Link href="/next">15 jours</Link>
       </li>
+      <li>|</li>
+      <li>
+        <Link href="/add-city">Ajouter une ville</Link>
+      </li>
     </ul>
   );
 };
