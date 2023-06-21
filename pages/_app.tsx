@@ -1,8 +1,8 @@
-import AppProvider from "../context/context.js";
 import type { AppProps } from "next/app";
 import Layout from "../components/Layout";
 import "../styles/globals.css";
 import { Nunito } from "next/font/google";
+import AppProvider from "../context/AppProvider";
 
 const roboto = Nunito({
   weight: "400",

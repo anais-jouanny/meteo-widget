@@ -1,33 +1,25 @@
-import { CountryCode } from "openweathermap-ts/dist/types";
-import { Dispatch, SetStateAction } from "react";
+import { ChangeEvent } from "react";
+import { City } from "../../utils/types";
+import addCityStyles from "../../modules/AddCity.module.css";
 
 interface AddCityInputProps {
-  state: {
-    cities: string[];
-    citiesCoord: string[];
-  };
-  setState: Dispatch<SetStateAction<AddCityInputProps["state"]>>;
-  city: {
-    country: CountryCode;
-    lat: number;
-    lon: number;
-    name: string;
-    state: string;
-  };
+  city: City;
+  onClick: (newCity: string) => void;
 }
 
-const AddCityInput = ({ state, setState, city }: AddCityInputProps) => {
-  const handleSubmit = (e) => {
+const AddCityInput = ({ city, onClick }: AddCityInputProps) => {
+  const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setState({
-      ...state,
-      cities: [...state.cities, city.name.toLocaleLowerCase()],
-    });
+    onClick(city.name);
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="submit" value="Ajouter à la liste" />
+      <input
+        type="submit"
+        value="Ajouter à la liste"
+        className={addCityStyles.addbutton}
+      />
     </form>
   );
 };

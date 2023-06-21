@@ -1,38 +1,41 @@
-import { CountryCode } from "openweathermap-ts/dist/types";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../context/context";
 import AddCityInput from "./AddCityInput";
+import addCityStyles from "../../modules/AddCity.module.css";
+import { City } from "../../utils/types";
 
 interface CitiesListProps {
-  citiesList: {
-    country: CountryCode;
-    lat: number;
-    lon: number;
-    name: string;
-    state: string;
-  }[];
+  citiesList: City[];
 }
 
 const CitiesList = ({ citiesList }: CitiesListProps) => {
-  const { state, setState } = useContext(AppContext);
-  const { cities } = state;
+  const { cities, setCities } = useContext(AppContext);
+  const [citiesState, setCitiesState] = useState(cities);
+
+  useEffect(() => {
+    setCities(citiesState);
+  }, [citiesState]);
+
+  const handleOnClick = (newCity: string) => {
+    setCitiesState([...citiesState, newCity.toLocaleLowerCase()]);
+  };
 
   return (
-    <ul>
+    <ul className={addCityStyles.list}>
       {citiesList.length > 0 &&
         citiesList.map((city) => {
-          const isInList = cities.includes(city.name.toLowerCase());
+          const isInList = citiesState.includes(city.name.toLowerCase());
 
           return (
-            <li key={city.lat}>
-              <h2>{city.name}</h2>
+            <li key={city.lat} className={addCityStyles.listItem}>
+              <h2 className={addCityStyles.city}>{city.name}</h2>
 
               <h3>
                 {city.state} - {city.country}
               </h3>
 
               {!isInList && (
-                <AddCityInput state={state} setState={setState} city={city} />
+                <AddCityInput city={city} onClick={handleOnClick} />
               )}
             </li>
           );

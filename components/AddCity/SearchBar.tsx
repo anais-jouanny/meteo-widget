@@ -1,4 +1,5 @@
-import { Dispatch, SetStateAction } from "react";
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
+import addCityStyles from "../../modules/AddCity.module.css";
 
 interface SearchBarProps {
   newCityValue: string;
@@ -11,15 +12,16 @@ const SearchBar = ({
   setNewCityValue,
   setCityToSearch,
 }: SearchBarProps) => {
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setCityToSearch(newCityValue.replaceAll(" ", "-"));
+    setCityToSearch(newCityValue.replace(" ", "-"));
     setNewCityValue("");
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={addCityStyles.form}>
       <input
+        className={addCityStyles.searchbar}
         type="text"
         placeholder="Chercher une ville"
         pattern="[a-zA-Z -]*"

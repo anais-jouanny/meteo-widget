@@ -2,16 +2,15 @@ import axios from "axios";
 import { SetStateAction, useContext, useEffect, useState } from "react";
 import Card from "../components/Home/Card";
 import homeStyles from "../modules/Home.module.css";
-import { AppContext } from "../context/context.js";
 import { CurrentResponse } from "openweathermap-ts/dist/types";
+import { AppContext } from "../context/context";
 
 const Home = () => {
   // API Key
   const apiKey = process.env.NEXT_PUBLIC_APIKEY;
 
   // Context : cities name
-  const { state, setState } = useContext(AppContext);
-  const { cities, citiesCoord } = state;
+  const { cities } = useContext(AppContext);
 
   // Local state : wather of the day, for each city
   const [citiesWeather, setCitiesWeather] = useState<CurrentResponse[]>([]);
