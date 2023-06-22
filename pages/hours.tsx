@@ -4,6 +4,7 @@ import { useContext, useState, useEffect } from "react";
 import HoursCard from "../components/Hours/HoursCard";
 import { AppContext } from "../context/context";
 import hoursStyles from "../modules/Hours.module.css";
+import { CityWeatherName } from "../utils/types";
 
 const ByHours = () => {
   // API Key
@@ -13,7 +14,7 @@ const ByHours = () => {
   const { cities } = useContext(AppContext);
 
   // Local state : wather of 24 next hours (by hour), for each city
-  const [citiesWeather, setCitiesWeather] = useState<ThreeHourResponse[]>([]);
+  const [citiesWeather, setCitiesWeather] = useState<CityWeatherName[]>([]);
 
   // Get the weather for each city
   useEffect(() => {

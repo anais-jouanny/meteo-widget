@@ -1,10 +1,10 @@
-import { ThreeHourResponse } from "openweathermap-ts/dist/types";
 import hoursStyles from "../../modules/Hours.module.css";
 import { useState } from "react";
 import HoursTimestamp from "./HoursTimestamp";
+import { CityWeatherName } from "../../utils/types";
 
 interface HoursCardProps {
-  cityWeather: ThreeHourResponse;
+  cityWeather: CityWeatherName;
 }
 
 const HoursCard = ({ cityWeather }: HoursCardProps) => {
@@ -15,12 +15,15 @@ const HoursCard = ({ cityWeather }: HoursCardProps) => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
+  console.log(cityWeather);
 
   return (
     <li className={cssClass}>
       <div className={hoursStyles.cardTitle} onClick={handleClick}>
-        <h2 className={hoursStyles.city}>{name}</h2>
-        <h3 className={hoursStyles.cityCountry}>- {country}</h3>
+        <h2 className={hoursStyles.city}>
+          {name}
+          <span className={hoursStyles.cityCountry}>- {country}</span>
+        </h2>
       </div>
 
       {isOpen && (
