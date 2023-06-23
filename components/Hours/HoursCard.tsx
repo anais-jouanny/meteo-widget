@@ -2,6 +2,7 @@ import hoursStyles from "../../modules/Hours.module.css";
 import { useState } from "react";
 import HoursTimestamp from "./HoursTimestamp";
 import { CityWeatherName } from "../../utils/types";
+import React from "react";
 
 interface HoursCardProps {
   cityWeather: CityWeatherName;
@@ -15,7 +16,7 @@ const HoursCard = ({ cityWeather }: HoursCardProps) => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
-  console.log(cityWeather);
+  console.log(name, country);
 
   return (
     <li className={cssClass}>
