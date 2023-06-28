@@ -1,7 +1,7 @@
-import { CityWeatherName } from "../../../../utils/types";
+import { CityWeatherName } from "../../../utils/types";
 
 export const saintDenis: CityWeatherName = {
-  name: "Saint-Denis",
+  name: "Saint-Denis- ile-de-france",
   country: "FR",
   cod: "200",
   message: 0,

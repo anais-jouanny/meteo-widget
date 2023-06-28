@@ -22,6 +22,7 @@ const Card = ({ cityWeather }: CardProps) => {
       <p className={homeStyles.p}>{weather[0].description}</p>
       <Image
         alt="icon"
+        aria-hidden="true"
         src={`https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`}
         loading="lazy"
         className={homeStyles.icon}
