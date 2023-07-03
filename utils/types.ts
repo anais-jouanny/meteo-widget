@@ -1,4 +1,8 @@
-import { CountryCode, ThreeHourResponse } from "openweathermap-ts/dist/types";
+import {
+  CountryCode,
+  CurrentResponse,
+  ThreeHourResponse,
+} from "openweathermap-ts/dist/types";
 
 export interface City {
   country: CountryCode;
@@ -9,6 +13,11 @@ export interface City {
 }
 
 export interface CityWeatherName extends ThreeHourResponse {
+  name: string;
+  country: string;
+}
+
+export interface CityWeatherByHour extends CurrentResponse {
   name: string;
   country: string;
 }
