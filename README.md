@@ -12,10 +12,14 @@
 - Typescript
 - CSS Modules
 - OpenWeather APIs
+- Jest
 
 ## Brief
 
 Les utilisateurs doivent être en mesure de :
+- Voir la météo du jour pour chaque ville
+- Voir la météo par heure pour chaque ville
+- Ajouter une nouvelle ville
 
 
 # Screenshots
