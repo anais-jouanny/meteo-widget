@@ -28,11 +28,11 @@ const CitiesList = ({ citiesList }: CitiesListProps) => {
 
           return (
             <li key={city.lat} className={addCityStyles.listItem}>
-              <h2 className={addCityStyles.city}>{city.name}</h2>
+              <p className={addCityStyles.city}>{city.name}</p>
 
-              <h3>
+              <p>
                 {city.state} - {city.country}
-              </h3>
+              </p>
 
               {!isInList && (
                 <AddCityInput city={city} onClick={handleOnClick} />

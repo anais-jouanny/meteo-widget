@@ -16,15 +16,29 @@ const HoursCard = ({ cityWeather }: HoursCardProps) => {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
-  console.log(name, country);
+
+  const handleKeyDown = (e: { key: string }) => {
+    if (e.key === "Enter") {
+      setIsOpen(!isOpen);
+    }
+  };
 
   return (
     <li className={cssClass}>
-      <div className={hoursStyles.cardTitle} onClick={handleClick}>
-        <h2 className={hoursStyles.city}>
+      <div
+        className={hoursStyles.cardTitle}
+        tabIndex={0}
+        role="button"
+        aria-pressed="false"
+        onClick={handleClick}
+        onKeyDown={handleKeyDown}
+      >
+        <p className={hoursStyles.city}>
           {name}
-          <span className={hoursStyles.cityCountry}>- {country}</span>
-        </h2>
+          <span className={hoursStyles.cityCountry} aria-hidden="true">
+            - {country}
+          </span>
+        </p>
       </div>
 
       {isOpen && (
