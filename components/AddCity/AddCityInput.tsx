@@ -15,11 +15,12 @@ const AddCityInput = ({ city, onClick }: AddCityInputProps) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="submit"
-        value="Ajouter à la liste"
+      <button
         className={addCityStyles.addbutton}
-      />
+        aria-label={`Ajouter ${city.name} à la liste`}
+      >
+        Ajouter à la liste
+      </button>
     </form>
   );
 };

@@ -15,7 +15,7 @@ const HoursTimestamp = ({ datas }: TimestampProps) => {
     <div className={hoursStyles.hourColumn}>
       <p>{hour}h</p>
       <Image
-        alt="icon"
+        alt={datas.weather[0].description}
         src={`https://openweathermap.org/img/wn/${datas.weather[0].icon}@2x.png`}
         loading="lazy"
         className={hoursStyles.icon}

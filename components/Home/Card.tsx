@@ -10,10 +10,12 @@ const Card = ({ cityWeather }: CardProps) => {
   const { name, country, main, weather } = cityWeather;
 
   return (
-    <div className={homeStyles.card}>
+    <div className={homeStyles.card} tabIndex={0}>
       <div className={homeStyles.cardTitle}>
-        <h2 className={homeStyles.city}>{name}</h2>
-        <h3 className={homeStyles.cityCountry}>{country}</h3>
+        <p className={homeStyles.city}>{name}</p>
+        <p className={homeStyles.cityCountry} aria-hidden="true">
+          {country}
+        </p>
       </div>
 
       <p className={homeStyles.p}>
