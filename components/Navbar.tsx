@@ -23,7 +23,7 @@ const Navbar = () => {
       </li>
       <li>|</li>
       <li>
-        <Link href="/add-city">Ajouter une ville</Link>
+        <Link href="/manage-cities">Gérer les villes</Link>
       </li>
     </ul>
   );
