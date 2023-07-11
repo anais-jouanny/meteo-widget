@@ -11,6 +11,11 @@
   list-style: none;
 }
 
+.card:hover {
+  box-shadow: 1px 1px 3px rgb(130, 130, 130);
+  cursor: pointer;
+}
+
 .openCard {
   padding: 0.7em;
   margin: 0 auto 1.2em;

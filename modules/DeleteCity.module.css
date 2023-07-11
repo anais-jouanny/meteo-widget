@@ -1,13 +1,5 @@
-.form {
+.title {
   text-align: center;
-}
-
-.searchbar {
-  padding: 1em;
-  border-radius: 0.3em;
-  min-width: 20%;
-  background-color: rgba(2, 178, 237, 0.407);
-  border: 1px solid gray;
 }
 
 .list {
@@ -22,14 +14,11 @@
   align-items: center;
   column-gap: 1em;
   margin-top: 0.7em;
-}
-
-.city {
   text-transform: uppercase;
   font-size: medium;
 }
 
-.addbutton {
+.deleteButton {
   padding: 0.2em 0.5em;
   border-radius: 0.3em;
   background-color: rgba(2, 178, 237, 0.407);
