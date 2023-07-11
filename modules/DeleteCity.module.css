@@ -1,0 +1,27 @@
+.title {
+  text-align: center;
+}
+
+.list {
+  margin-top: 2em;
+  text-align: center;
+  list-style: none;
+}
+
+.listItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1em;
+  margin-top: 0.7em;
+  text-transform: uppercase;
+  font-size: medium;
+}
+
+.deleteButton {
+  padding: 0.2em 0.5em;
+  border-radius: 0.3em;
+  background-color: rgba(2, 178, 237, 0.407);
+  border: 1px solid gray;
+  box-shadow: 1px 1px rgb(200, 200, 200);
+}
