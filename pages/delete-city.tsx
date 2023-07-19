@@ -7,6 +7,7 @@ const DeleteCity = () => {
   const { cities, setCities } = useContext(AppContext);
 
   const handleOnClick = (cityToDelete: string) => {
+    console.log(cityToDelete);
     const updatedCities = cities.filter((city) => city !== cityToDelete);
     setCities(updatedCities);
   };

@@ -11,8 +11,8 @@ describe("Hours card", () => {
 
     // ACT
     await userEvent.click(
-      screen.getByRole("heading", {
-        name: /saint\-denis\- ile\-de\-france \- fr/i,
+      screen.getByRole("button", {
+        name: "Saint-Denis- ile-de-france",
       })
     );
     // ASSERT
