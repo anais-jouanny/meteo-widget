@@ -26,5 +26,9 @@ Les utilisateurs doivent être en mesure de :
 
 
 # Screenshots
+![image](https://github.com/anais-jouanny/meteo-widget/assets/104211515/b45b128d-98f2-4dd9-9091-d3f0a3785df5)
+![image](https://github.com/anais-jouanny/meteo-widget/assets/104211515/bbdc4d95-d240-4b77-849e-2fad253e755d)
+![image](https://github.com/anais-jouanny/meteo-widget/assets/104211515/52e1fd4c-b0e1-4433-8e34-8f8abdc5d89b)
+
 
 
