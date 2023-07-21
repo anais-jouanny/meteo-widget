@@ -1,30 +1,35 @@
 import Link from "next/link";
 import navbarStyles from "../modules/Navbar.module.css";
+import { useRouter } from "next/router";
 
 const Navbar = () => {
+  const router = useRouter();
+
+  const menu = [
+    { title: "Aujourd'hui", path: "/" },
+    { title: "Par heure", path: "/hours" },
+    { title: "Gérer les villes", path: "/manage-cities" },
+  ];
+
+  let currentPath = router.pathname.split("/");
+  currentPath.splice(0, 1, "/");
+  currentPath.splice(2);
+
+  const clearedPath = currentPath[0].concat(currentPath[1]);
+
   return (
     <ul className={navbarStyles.list}>
-      <li>
-        <Link href="/" aria-label="météo du jour">
-          Aujourd&apos;hui
-        </Link>
-      </li>
-      <li>|</li>
-      <li>
-        <Link href="/hours" aria-label="météo par heure">
-          Par heure
-        </Link>
-      </li>
-      <li>|</li>
-      <li>
-        <Link href="/next" aria-label="météo des prochains jours">
-          15 jours
-        </Link>
-      </li>
-      <li>|</li>
-      <li>
-        <Link href="/manage-cities">Gérer les villes</Link>
-      </li>
+      {menu.map((item) => {
+        const css = item.path === clearedPath ? navbarStyles.currentLink : "";
+
+        return (
+          <li key={item.path} className={navbarStyles.item}>
+            <Link href={item.path} className={css}>
+              {item.title}
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   );
 };

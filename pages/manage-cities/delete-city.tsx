@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { AppContext } from "../context/context";
-import deleteCityStyles from "../modules/DeleteCity.module.css";
-import DeleteCityInput from "../components/DeleteCity/DeleteCityInput";
+import { AppContext } from "../../context/context";
+import deleteCityStyles from "../../modules/DeleteCity.module.css";
+import DeleteCityInput from "../../components/DeleteCity/DeleteCityInput";
 
 const DeleteCity = () => {
   const { cities, setCities } = useContext(AppContext);

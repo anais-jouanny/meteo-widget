@@ -2,9 +2,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.7em;
+  gap: 0.8em;
   flex-wrap: nowrap;
   list-style: none;
   text-decoration: none;
   line-height: 1em;
+}
+
+.item {
+  border-right: 1px solid black;
+  padding-right: 0.8em;
+}
+
+.item:last-child {
+  border: none;
+}
+
+.currentLink {
+  font-weight: bold;
 }

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import CitiesList from "../components/AddCity/CitiesList";
-import SearchBar from "../components/AddCity/SearchBar";
-import addCityStyles from "../modules/AddCity.module.css";
+import CitiesList from "../../components/AddCity/CitiesList";
+import SearchBar from "../../components/AddCity/SearchBar";
+import addCityStyles from "../../modules/AddCity.module.css";
 import axios from "axios";
 
 const AddCity = () => {
