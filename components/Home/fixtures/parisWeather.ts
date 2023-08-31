@@ -43,6 +43,5 @@ export const weather = {
   },
   timezone: 7200,
   id: 6545270,
-  name: "Quartier du Palais-Royal",
   cod: 200,
 };
