@@ -6,7 +6,10 @@ export interface ContextProps {
 }
 
 export const initialState: ContextProps = {
-  cities: ["paris", "toulouse", "barcelone", "bangkok", "saint-denis"],
+  cities: [
+    "paris",
+    // "toulouse", "barcelone", "bangkok", "saint-denis"
+  ],
   setCities: (city) => {},
 };
 

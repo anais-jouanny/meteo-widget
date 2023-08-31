@@ -15,6 +15,7 @@ const Home = () => {
 
   // Local state : wather of the day, for each city
   const [citiesWeather, setCitiesWeather] = useState<CityWeatherByHour[]>([]);
+  console.log(citiesWeather);
 
   useEffect(() => {
     let array: any[] = [];
@@ -25,6 +26,7 @@ const Home = () => {
           `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`
         )
         .then((response) => {
+          console.log(response.data);
           const cityName = response.data[0].name;
           const cityContry =
             response.data[0].state + " - " + response.data[0].country;
@@ -33,6 +35,7 @@ const Home = () => {
               `https://api.openweathermap.org/data/2.5/weather?lat=${response.data[0].lat}&lon=${response.data[0].lon}&appid=${apiKey}&units=metric&lang=fr`
             )
             .then((response) => {
+              console.log(response.data);
               const newCity = {
                 ...response.data,
                 name: cityName,
